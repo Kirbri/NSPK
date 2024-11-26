@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.12.0'
+}
+
+group = 'ru.kirbri'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def allureVersion = "2.29.0",
+    selenideVersion = "7.5.1",
+    jupiterVersion = "5.11.3",
+    javafakerVersion = "1.0.2",
+    slf4jVersion = "2.0.16"
+
+allure {
+    report {
+        version.set(allureVersion)
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set(allureVersion)
+            }
+        }
+    }
+}
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:$selenideVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "org.junit.jupiter:junit-jupiter:$jupiterVersion",
+            "com.github.javafaker:javafaker:$javafakerVersion",
+            "com.codeborne:pdf-test:1.5.0",
+            "org.slf4j:slf4j-simple:$slf4jVersion"
+    )
+    implementation 'org.seleniumhq.selenium:selenium-java:4.26.0'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+task smoke_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("SMOKE")
+    }
+}
