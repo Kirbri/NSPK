@@ -26,15 +26,14 @@ public class PressCenterPage extends Exception {
     }
 
     public File downloadedPDF() {
-        File downloadedPDF = pdfNSPKBrandBook.scrollTo().download();
-        return downloadedPDF;
+        return pdfNSPKBrandBook.scrollTo().download();
     }
 
     public PressCenterPage complianceAssertionsPDF(PDF pdfFile) {
         Assertions.assertEquals(pdfFile.numberOfPages, numberOfPagesNSPKBrandBook);
-                Assertions.assertEquals(pdfFile.creationDate.getWeekYear(), creationDateYearNSPKBrandBook);
-                Assertions.assertEquals(pdfFile.creator, creatorNSPKBrandBook);
-                Assertions.assertTrue(pdfFile.text.contains(partTextNSPKBrandBook));
+        Assertions.assertEquals(pdfFile.creationDate.getWeekYear(), creationDateYearNSPKBrandBook);
+        Assertions.assertEquals(pdfFile.creator, creatorNSPKBrandBook);
+        Assertions.assertTrue(pdfFile.text.contains(partTextNSPKBrandBook));
         return this;
     }
 }

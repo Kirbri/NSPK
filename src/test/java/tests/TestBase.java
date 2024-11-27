@@ -14,7 +14,8 @@ import java.util.Map;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.browser;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class TestBase {
@@ -41,7 +42,7 @@ public class TestBase {
 
     @BeforeEach
     void beforeEach() {
-        step("Открытие главной страницы", () -> {
+        step("Открытие главной страницы «Национальная система платежных карт»", () -> {
             open("/");
             $(".ctr-index-head__font.ctr-index-head__font--title").shouldHave(text("Национальная " +
                     "система платежных карт"));

@@ -7,23 +7,24 @@ import com.codeborne.selenide.WebDriverRunner;
 
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class UniversalQRPage {
-    private final SelenideElement knowBenefitsButton= $(".uniqr-main__font.uniqr-main__font--button"),
-    advantagesHeadingText = $(".advantages__font.advantages__font--heading"),
-    linksPagesBusiness = $("[href=\"/uniqr/business\"]"),
-    advantagesTitleText = $(".advantages__font.advantages__font--title"),
-    howToConnectText = $(".connection__font.connection__font--heading"),
-    howAcceptPaymentText = $(".how__font.how__font--heading"),
-    howStepsText = $(".how__text .html-content.how__font.how__font--text"),
-    steps2IconLink = $("[viewBox=\"0 0 33 46\"]"),
-    steps3IconLink = $("[viewBox=\"0 0 30 47\"]"),
-    steps4IconLink = $("[viewBox=\"0 0 30 45\"]"),
-    uniqrCardsTitle = $(".uniqr-cards__font.uniqr-cards__font--title");
+    private final SelenideElement knowBenefitsButton = $(".uniqr-main__font.uniqr-main__font--button"),
+            advantagesHeadingText = $(".advantages__font.advantages__font--heading"),
+            linksPagesBusiness = $("[href=\"/uniqr/business\"]"),
+            advantagesTitleText = $(".advantages__font.advantages__font--title"),
+            howToConnectText = $(".connection__font.connection__font--heading"),
+            howAcceptPaymentText = $(".how__font.how__font--heading"),
+            howStepsText = $(".how__text .html-content.how__font.how__font--text"),
+            steps2IconLink = $("[viewBox=\"0 0 33 46\"]"),
+            steps3IconLink = $("[viewBox=\"0 0 30 47\"]"),
+            steps4IconLink = $("[viewBox=\"0 0 30 45\"]"),
+            uniqrCardsTitle = $(".uniqr-cards__font.uniqr-cards__font--title");
 
     private final ElementsCollection connectionSliderSize = $$(".connection__item"),
-    cardTitleSize = $$(".cards-uniqr-card__font.cards-uniqr-card__font--title");
+            cardTitleSize = $$(".cards-uniqr-card__font.cards-uniqr-card__font--title");
 
     public UniversalQRPage openPaymentSystemMirPage() {
         $("[href=\"https://sbp.nspk.ru/uniqr?utm_source=nspkru\"]").scrollTo().click();
@@ -34,7 +35,7 @@ public class UniversalQRPage {
         return this;
     }
 
-    public UniversalQRPage knowBenefitsBusinessButton () {
+    public UniversalQRPage knowBenefitsBusinessButton() {
         knowBenefitsButton.click();
         linksPagesBusiness.click();
         advantagesHeadingText.scrollIntoView(true).should(text("Преимущества Универсального QR"));
@@ -42,13 +43,13 @@ public class UniversalQRPage {
         return this;
     }
 
-    public UniversalQRPage howToConnect () {
+    public UniversalQRPage howToConnect() {
         howToConnectText.scrollTo().should(text("Как подключиться"));
         connectionSliderSize.shouldHave(size(3));
         return this;
     }
 
-    public UniversalQRPage howToAcceptPaymentTapText () {
+    public UniversalQRPage howToAcceptPaymentTapText() {
         howAcceptPaymentText.scrollTo().should(text("Как принимать оплату"));
         howStepsText.should(text("Продавец демонстрирует Универсальный QR клиенту на любом удобном носителе"));
         steps2IconLink.click();
@@ -64,7 +65,7 @@ public class UniversalQRPage {
         return this;
     }
 
-    public UniversalQRPage paymentMethods () {
+    public UniversalQRPage paymentMethods() {
         uniqrCardsTitle.scrollTo().should(text("Способы приема оплаты по QR коду"));
         cardTitleSize.shouldHave(size(4));
         return this;

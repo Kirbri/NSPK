@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.*;
 
+import static io.qameta.allure.Allure.step;
+
 public class NspkTests extends TestBase {
 
     PressCenterPage pressCenterPage = new PressCenterPage();
@@ -22,12 +24,17 @@ public class NspkTests extends TestBase {
     @Test
     @Tag("SMOKE")
     @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Переход с главной страницы по ссылке на Правила и тарифы платежной системы «Мир», открытие pdf-файла " +
-            "Правила ПС «Мир». Приложение 4. Тарифы. Часть 1. Для российских участников (4.12)")
+    @DisplayName("Переход с главной страницы по ссылке на Правила и тарифы платежной системы «Мир», открытие " +
+            "pdf-файла Правила ПС «Мир». Приложение 4. Тарифы. Часть 1. Для российских участников (4.12)")
     void mainPageCardMIRDownloadFirstPDFFileTest() throws Exception {
-        paymentSystemMirPage.openPaymentSystemMirPage();
-        PDF pdf = new PDF(paymentSystemMirPage.downloadedPDF());
-        paymentSystemMirPage.complianceAssertionsPDF(pdf);
+        step("Переход на страницу «Правила и тарифы платежной системы «Мир»", () -> {
+            paymentSystemMirPage.openPaymentSystemMirPage();
+        });
+        step("Проверка данных в pdf-файле «Правила ПС «Мир». Приложение 4. Тарифы. Часть 1. Для российских " +
+                "участников (4.12)»", () -> {
+            PDF pdf = new PDF(paymentSystemMirPage.downloadedPDF());
+            paymentSystemMirPage.complianceAssertionsPDF(pdf);
+        });
     }
 
     @Test
@@ -36,9 +43,15 @@ public class NspkTests extends TestBase {
     @DisplayName("Переход с главной страницы по ссылке на Систему быстрых платежей, Подключи свой бизнес к СБП, " +
             "открытие страницы Углеметбанка")
     void mainPageSBPConnectYourBisnesUglemetbankTest() {
-        fastPaymentSystemPage.openFastPaymentSystemPage()
-                .connectYourBusinessToSBP()
-                .openUglemetbankLink();
+        step("Переход на страницу «Система быстрых платежей»", () -> {
+            fastPaymentSystemPage.openFastPaymentSystemPage();
+        });
+        step("Переход на страницу «Подключи свой бизнес к СБП»", () -> {
+            fastPaymentSystemPage.connectYourBusinessToSBP();
+        });
+        step("Переход на страницу подключения для банка «Углеметбанк»", () -> {
+            fastPaymentSystemPage.openUglemetbankLink();
+        });
     }
 
     @Test
@@ -46,11 +59,15 @@ public class NspkTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Переход с главной страницы по ссылке на Универсальный QR, проверка содержания страницы")
     void mainPageUniversalQRTextTest() {
-        universalQRPage.openPaymentSystemMirPage()
-                .knowBenefitsBusinessButton()
-                .howToConnect()
-                .howToAcceptPaymentTapText()
-                .paymentMethods();
+        step("Переход на страницу «Универсальный QR»", () -> {
+            universalQRPage.openPaymentSystemMirPage();
+        });
+        step("Проверка текстового содержания на странице", () -> {
+            universalQRPage.knowBenefitsBusinessButton()
+                    .howToConnect()
+                    .howToAcceptPaymentTapText()
+                    .paymentMethods();
+        });
     }
 
     @Test
@@ -58,11 +75,21 @@ public class NspkTests extends TestBase {
     @Severity(SeverityLevel.MINOR)
     @DisplayName("Переход с главной страницы по всем страницам группы Банкам, проверка заголовков и содержания страниц")
     void pagesTabBanksTest() {
-        banksPage.complianceOpenedBanksPageGuides()
-                .complianceOpenedBanksPageAcquiring()
-                .complianceOpenedBanksPageRules()
-                .complianceOpenedBanksPageAnalytics()
-                .complianceOpenedBanksPageEcheck();
+        step("Переход на страницу Банкам, Руководства", () -> {
+            banksPage.complianceOpenedBanksPageGuides();
+        });
+        step("Переход на страницу Банкам, Эквайринг SoftPOS", () -> {
+            banksPage.complianceOpenedBanksPageAcquiring();
+        });
+        step("Переход на страницу Банкам, Правила и тарифы платежной системы «Мир»", () -> {
+            banksPage.complianceOpenedBanksPageRules();
+        });
+        step("Переход на страницу Банкам, Сервис «Аналитика»", () -> {
+            banksPage.complianceOpenedBanksPageAnalytics();
+        });
+        step("Переход на страницу Банкам, Сервис привязки фискальных чеков к банковским транзакциям", () -> {
+            banksPage.complianceOpenedBanksPageEcheck();
+        });
     }
 
     @Test
@@ -70,15 +97,23 @@ public class NspkTests extends TestBase {
     @Severity(SeverityLevel.MINOR)
     @DisplayName("Переход с главной страницы на страницу Контакты, проверка содержания страницы")
     void contactsCheckTest() {
-        contactsPage.openContactsPage()
-                .complianceSidebarTitleText()
-                .complianceSidebarImgAttribute()
-                .complianceContentFontInfoSize()
-                .complianceContentFontInfoTexts()
-                .complianceContactsFontHrefAddress()
-                .complianceContactsFontHrefFax()
-                .complianceContactsFontHrefSupportMir()
-                .complianceContactsFontHrefEMail();
+        step("Переход на страницу «Контакты»", () -> {
+            contactsPage.openContactsPage();
+        });
+        step("Проверка текстового содержания на странице и количества элементов", () -> {
+            contactsPage.complianceSidebarTitleText()
+                    .complianceContentFontInfoTexts()
+                    .complianceContentFontInfoSize();
+        });
+        step("Проверка изображений", () -> {
+            contactsPage.complianceSidebarImgAttribute();
+        });
+        step("Проверка ссылок", () -> {
+            contactsPage.complianceContactsFontHrefAddress()
+                    .complianceContactsFontHrefFax()
+                    .complianceContactsFontHrefSupportMir()
+                    .complianceContactsFontHrefEMail();
+        });
     }
 
     @Test
@@ -87,16 +122,22 @@ public class NspkTests extends TestBase {
     @DisplayName("Переход с главной страницы на страницу группы О компании, Компания АО «НСПК», проверка содержания " +
             "страницы")
     void aboutCompanyCheckTest() {
-        aboutCompanyPage.openAboutCompanyPage()
-                .complianceAboutHeadHugeText()
-                .complianceAboutHeadColsText()
-                .complianceAboutHeadFontText()
-                .complianceAboutMissionTitleText()
-                .complianceAboutMissionImg0()
-                .complianceAboutMissionFontHugeText()
-                .complianceAboutMissionText0()
-                .complianceAboutMissionImg1()
-                .complianceAboutMissionText1();
+        step("Переход на страницу «О компании АО «НСПК»", () -> {
+            aboutCompanyPage.openAboutCompanyPage();
+        });
+        step("Проверка текстового содержания на странице", () -> {
+            aboutCompanyPage.complianceAboutHeadHugeText()
+                    .complianceAboutHeadColsText()
+                    .complianceAboutHeadFontText()
+                    .complianceAboutMissionTitleText()
+                    .complianceAboutMissionFontHugeText()
+                    .complianceAboutMissionText0()
+                    .complianceAboutMissionText1();
+        });
+        step("Проверка изображений на странице»", () -> {
+            aboutCompanyPage.complianceAboutMissionImg0()
+                    .complianceAboutMissionImg1();
+        });
     }
 
     @Test
@@ -104,23 +145,29 @@ public class NspkTests extends TestBase {
     @Severity(SeverityLevel.MINOR)
     @DisplayName("Проверка ссылок, телефонов, логотипа в \"подвале\" сайта на главной странице")
     void mainPageFooterLinkTest() {
-        mainPage.complianceFooterLogoSvg()
-                .complianceFooterLogoHref()
-                .complianceFooterPhoneNumberNSPK()
-                .complianceFooterPhoneNumberNSPKHref()
-                .complianceFooterPhoneNumberNSPKText()
-                .complianceFooterPhoneNumberSupportMirSbp()
-                .complianceFooterPhoneNumberSupportMirSbpHref()
-                .complianceFooterPhoneNumberSupportMirSbpText()
-                .complianceFooterTextAllRightsReserved()
-                .complianceFooterSocialNetworksMirText()
-                .complianceFooterSocialNetworksSbpText()
-                .complianceFooterSocialNetworksMirTg()
-                .complianceFooterSocialNetworksMirVkHref()
-                .complianceFooterSocialNetworksMirOkHref()
-                .complianceFooterSocialNetworksSbpTg()
-                .complianceFooterSocialNetworksSbpVkHref()
-                .complianceFooterSocialNetworksSbpOkHref();
+        step("Проверка изображений", () -> {
+            mainPage.complianceFooterLogoSvg();
+        });
+        step("Проверка текстового содержания", () -> {
+            mainPage.complianceFooterPhoneNumberNSPK()
+                    .complianceFooterPhoneNumberNSPKText()
+                    .complianceFooterPhoneNumberSupportMirSbp()
+                    .complianceFooterPhoneNumberSupportMirSbpText()
+                    .complianceFooterTextAllRightsReserved()
+                    .complianceFooterSocialNetworksMirText()
+                    .complianceFooterSocialNetworksSbpText();
+        });
+        step("Проверка ссылок", () -> {
+            mainPage.complianceFooterLogoHref()
+                    .complianceFooterPhoneNumberNSPKHref()
+                    .complianceFooterPhoneNumberSupportMirSbpHref()
+                    .complianceFooterSocialNetworksMirTgHref()
+                    .complianceFooterSocialNetworksMirVkHref()
+                    .complianceFooterSocialNetworksMirOkHref()
+                    .complianceFooterSocialNetworksSbpTgHref()
+                    .complianceFooterSocialNetworksSbpVkHref()
+                    .complianceFooterSocialNetworksSbpOkHref();
+        });
     }
 
     @Test
@@ -128,8 +175,12 @@ public class NspkTests extends TestBase {
     @Severity(SeverityLevel.TRIVIAL)
     @DisplayName("Переход с главной страницы на страницу Пресс-центр, проверка содержания pdf-файла Брендбук НСПК")
     void pressCenterDownloadPDFBrandBookNSPKTest() throws Exception {
-        pressCenterPage.openPressCenterPage();
-        PDF pdf = new PDF(pressCenterPage.downloadedPDF());
-        pressCenterPage.complianceAssertionsPDF(pdf);
+        step("Переход на страницу «Пресс-центр»", () -> {
+            pressCenterPage.openPressCenterPage();
+        });
+        step("Проверка данных в pdf-файле «Брендбук НСПК»", () -> {
+            PDF pdf = new PDF(pressCenterPage.downloadedPDF());
+            pressCenterPage.complianceAssertionsPDF(pdf);
+        });
     }
 }

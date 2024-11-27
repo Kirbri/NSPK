@@ -12,10 +12,10 @@ import static com.codeborne.selenide.Selenide.$$;
 public class ContactsPage {
 
     private final SelenideElement sidebarTitle = $("#sidebar-176"),
-    sidebarImg = $(".ctr-sidebar__img");
+            sidebarImg = $(".ctr-sidebar__img");
 
     private final ElementsCollection contentFontInfo = $$(".ui-html-content.ui-html-content--font"),
-    contactsFontHref = $$("[rel=\"noopener noreferrer nofollow\"]");
+            contactsFontHref = $$("[rel=\"noopener noreferrer nofollow\"]");
 
 
     public ContactsPage openContactsPage() {
@@ -24,46 +24,46 @@ public class ContactsPage {
         return this;
     }
 
-    public ContactsPage complianceSidebarTitleText () {
+    public ContactsPage complianceSidebarTitleText() {
         sidebarTitle.scrollTo().should(text("КАК СВЯЗАТЬСЯ"));
         return this;
     }
 
-    public ContactsPage complianceSidebarImgAttribute () {
+    public ContactsPage complianceSidebarImgAttribute() {
         sidebarImg.scrollTo().should(attribute("src",
                 "https://nspk.ru/storage/mediaicon/icon/0/0/90/90/Icon.png"));
         return this;
     }
 
-    public ContactsPage complianceContentFontInfoSize () {
+    public ContactsPage complianceContentFontInfoSize() {
         contentFontInfo.shouldHave(size(5));
         return this;
     }
 
-    public ContactsPage complianceContentFontInfoTexts () {
+    public ContactsPage complianceContentFontInfoTexts() {
         contentFontInfo.shouldHave(texts("115184, Москва, ул. Большая Татарская, д. 11",
                 "+7 495 705-99-99", "+7 495 705-99-77", "8 800 100 54 64 (бесплатная линия для звонков" +
                         " по России)", "info@nspk.ru"));
         return this;
     }
 
-    public ContactsPage complianceContactsFontHrefAddress () {
+    public ContactsPage complianceContactsFontHrefAddress() {
         contactsFontHref.get(0).shouldHave(href("https://yandex.ru/maps/213/moscow/house/" +
                 "bolshaya_tatarskaya_ulitsa_11/Z04YcARjQUEGQFtvfXt1cH1iYQ==/?ll=37.633841%2C55.741115&z=17.14"));
         return this;
     }
 
-    public ContactsPage complianceContactsFontHrefFax () {
+    public ContactsPage complianceContactsFontHrefFax() {
         contactsFontHref.get(2).shouldHave(href("tel:+7 (495) 705 99 77"));
         return this;
     }
 
-    public ContactsPage complianceContactsFontHrefSupportMir () {
+    public ContactsPage complianceContactsFontHrefSupportMir() {
         contactsFontHref.get(3).shouldHave(href("tel:8 800 100 54 64"));
         return this;
     }
 
-    public ContactsPage complianceContactsFontHrefEMail () {
+    public ContactsPage complianceContactsFontHrefEMail() {
         contactsFontHref.get(5).shouldHave(href("mailto:info@nspk.ru"));
         return this;
     }

@@ -10,8 +10,8 @@ import static com.codeborne.selenide.Selenide.switchTo;
 
 public class FastPaymentSystemPage {
     private final SelenideElement connectYourBusinessToSBP = $("[href=\"/business/connect\"]"),
-    uglemetbankLink = $("[src*=\"657083ca7d10c504436182.jpg\"]"),
-    informationAOUglemetbank = $(".information .text");
+            uglemetbankLink = $("[src*=\"657083ca7d10c504436182.jpg\"]"),
+            informationAOUglemetbank = $(".information .text");
 
     public FastPaymentSystemPage openFastPaymentSystemPage() {
         $("[href=\"https://sbp.nspk.ru/\"]").scrollTo().click();
@@ -34,7 +34,7 @@ public class FastPaymentSystemPage {
         for (String tab : WebDriverRunner.getWebDriver().getWindowHandles()) {
             Selenide.switchTo().window(tab);
         }
-        $(".information .text").scrollTo().shouldHave(text("\n                © АО «Углеметбанк»."));
+        informationAOUglemetbank.scrollTo().shouldHave(text("\n                © АО «Углеметбанк»."));
         return this;
     }
 }
