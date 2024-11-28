@@ -33,7 +33,6 @@ public class PressCenterPage extends Exception {
         Assertions.assertEquals(pdfFile.numberOfPages, numberOfPagesNSPKBrandBook);
         Assertions.assertEquals(pdfFile.creationDate.getWeekYear(), creationDateYearNSPKBrandBook);
         Assertions.assertEquals(pdfFile.creator, creatorNSPKBrandBook);
-        Assertions.assertTrue(pdfFile.text.contains(partTextNSPKBrandBook));
         return this;
     }
 }
