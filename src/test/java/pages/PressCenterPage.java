@@ -9,8 +9,6 @@ import java.io.File;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
-//Вопросы - что сделать с полями пдф - убрать в отдельный класс или оставить полями с геттерами, нужно ли вынести
-// Assertions в этот класс
 public class PressCenterPage extends Exception {
     private final SelenideElement pdfNSPKBrandBook = $(".bundles-list__links.hidden-mobile " +
             "[href=\"/file/8bfdff31/671b99cd24b09348972373.pdf\"]");
