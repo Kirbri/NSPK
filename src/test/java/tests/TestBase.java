@@ -25,7 +25,6 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.browserVersion = System.getProperty("browserVersion", "126.0");
         browser = System.getProperty("browser", "chrome");
-//        Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://nspk.ru";
         Configuration.timeout = 10000;
 
