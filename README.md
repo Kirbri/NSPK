@@ -74,11 +74,10 @@ ____
 ## <a name="Сборка в Jenkins"> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/005-Kornilova_Ann_qa_guru-java_14_jenkins/) </a>
 
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/005-Kornilova_Ann_qa_guru-java_14_jenkins/"><img src="" alt="Jenkins" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/005-Kornilova_Ann_qa_guru-java_14_jenkins/"><img src="src/test/resources/images/screenshot/HW14_Jenkins.png" alt="Jenkins" width="950"/></a>  
 </p>
 
-____
-
+<a id="jenkins_parameters"></a>
 ### <a name="Параметры сборки в Jenkins"> Параметры сборки в Jenkins </a>
 
 - REPOSITORY (репозиторий для запуска job'а)
@@ -88,3 +87,155 @@ ____
 - URL (адрес для запуска тестов)
 - COMMENT (комментарий для сборки)
 - ENVIRONMENT (окружение развёртывания ПО)
+
+<p align="center">  
+<a href="https://jenkins.autotests.cloud/job/005-Kornilova_Ann_qa_guru-java_14_jenkins/build?delay=0sec"><img src="src/test/resources/images/screenshot/HW14_Jenkins_parameters.png" alt="Jenkins" width="950"/></a>  
+</p>
+
+_____
+
+<a id="console"></a>
+## Команды для запуска из терминала
+
+**Локальный запуск с параметрами по умолчанию**
+```bash  
+gradle clean smoke_test 
+```
+
+**Локальный запуск с указанием параметров**
+```bash  
+gradle clean smoke_test
+-Dbrowser=chrome
+-DbrowserVersion=100
+-DbrowserSize=1920x1080
+-Durl=selenoid.autotests.cloud
+```
+
+**Удалённый запуск через Jenkins:**
+```bash
+clean smoke_test 
+-Dbrowser=${BROWSER}
+-DbrowserVersion=${BROWSER_VERSION}
+-DbrowserSize=${SCREEN_RESOLUTION}
+-Durl=${URL}
+```
+
+_____
+
+<a id="allure"></a>
+## <a name="Allure">Allure [отчет](https://jenkins.autotests.cloud/job/005-Kornilova_Ann_qa_guru-java_14_jenkins/27/allure/)</a>
+
+### Основная страница отчёта
+
+<p align="center">  
+<img title="Allure Overview Dashboard" src="src/test/resources/images/screenshot/HW14_Allure_Report.png" width="850">  
+</p>  
+
+### Тест-кейсы
+
+<p align="center">  
+<img title="Allure Tests" src="src/test/resources/images/screenshot/HW14_Allure_Report_2.png" width="850">  
+</p>
+
+<p align="center">  
+<img title="Allure Tests" src="src/test/resources/images/screenshot/HW14_Allure_Report_6.png" width="850">  
+</p>
+
+<p align="center">  
+<img title="Allure Tests" src="src/test/resources/images/screenshot/HW14_Allure_Report_7.png" width="850">  
+</p>
+
+### Графики
+
+  <p align="center">  
+<img title="Allure Graphics" src="src/test/resources/images/screenshot/HW14_Allure_Report_3.png" width="850">
+
+<img title="Allure Graphics" src="src/test/resources/images/screenshot/HW14_Allure_Report_4.png" width="850">  
+</p>
+
+___
+
+<a id="allure-testops"></a>
+## <a name="Allure_TestOps">Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/43014)</a>
+
+### *Allure TestOps Dashboard*
+
+<p align="center">  
+<img title="Allure TestOps Dashboard" src="src/test/resources/images/screenshot/HW14_Allure_TestOps_1png.png" width="850">  
+</p>  
+
+### *Авто тест-кейсы*
+
+<p align="center">  
+<img title="Allure TestOps Tests" src="src/test/resources/images/screenshot/HW14_Allure_TestOps_2.png" width="850">  
+</p>
+
+___
+<a id="jira"></a>
+## <a name="Jira">Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-1369)</a>
+
+<p align="center">  
+<img title="Jira" src="src/test/resources/images/screenshot/HW14_Jira_1.png" width="850">  
+</p>
+
+<p align="center">  
+<img title="Jira" src="src/test/resources/images/screenshot/HW14_Jira_2.png" width="850">  
+</p>
+
+____
+
+<a id="telegram"></a>
+##  <a name="Telegram"> Уведомление в Telegram </a>
+
+<p align="center">  
+<img title="Allure Overview Dashboard" src="src/test/resources/images/screenshot/HW14_Telegram.png" width="550">  
+</p>
+
+____
+
+<a id="mail"></a>
+##  <a name="Mail"> Уведомление на почту </a>
+
+<p align="center">  
+<img title="Allure Overview Dashboard" src="src/test/resources/images/screenshot/HW14_Mail.png" width="550">  
+</p>
+
+____
+
+<a id="video"></a>
+##  <a name="Telegram"> Примеры выполнения тестов </a>
+
+<p align="center">
+<img title="Selenoid Video" src="src/test/resources/screenshot.gif/09d9d37bed5f8ca68ac8b75ed3ee662d.gif" width="550" height="350"  alt="video">   
+</p>
+
+<details>
+<summary>Ещё примеры выполнения тестов</summary>
+<p align="center">
+<img title="Selenoid Video" src="src/test/resources/screenshot.gif/0c4d0160fbd6b5f263c90fea6633e5be.gif" width="550" height="350"  alt="video">   
+</p>
+
+<p align="center">
+<img title="Selenoid Video" src="src/test/resources/screenshot.gif/40c7ba1ddcfa452973872f1762d43e69.gif" width="550" height="350"  alt="video">   
+</p>
+
+<p align="center">
+<img title="Selenoid Video" src="src/test/resources/screenshot.gif/83b1f07cfb4ba590d6a1fd02e1450c7b.gif" width="550" height="350"  alt="video">   
+</p>
+
+<p align="center">
+<img title="Selenoid Video" src="src/test/resources/screenshot.gif/9d04b9d44e6dd781d0c4c5eb928d61e6.gif" width="550" height="350"  alt="video">   
+</p>
+
+<p align="center">
+<img title="Selenoid Video" src="src/test/resources/screenshot.gif/c2a8591ea5e815d2ec56cd0a46eb9bcd.gif" width="550" height="350"  alt="video">   
+</p>
+
+<p align="center">
+<img title="Selenoid Video" src="src/test/resources/screenshot.gif/da8584b8de36369e48f6777dbe7de63c.gif" width="550" height="350"  alt="video">   
+</p>
+
+<p align="center">
+<img title="Selenoid Video" src="src/test/resources/screenshot.gif/e8029034c4f950f02cf427264e58254c.gif" width="550" height="350"  alt="video">   
+</p>
+</details>
