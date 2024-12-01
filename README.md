@@ -3,35 +3,27 @@
 > Акционерное общество «Национальная система платежных карт» (НСПК) — оператор платежной системы «Мир», операционный платежный и клиринговый центр Системы быстрых платежей (СБП)
 
  ____
- 
+
+<a id="content"></a>
 ## Содержание
-____
 
 * <a href="#tools">Технологии и инструменты</a>
-
 * <a href="#project_goal">Цель проекта</a>
-
 * <a href="#cases">Примеры автоматизированных тест-кейсов</a>
-
 * <a href="#jenkins">Сборка в Jenkins</a>
-
-
+* <a href="#jenkins_parameters">Параметризированная сборка в Jenkins</a>
 * <a href="#console">Запуск из терминала</a>
-
 * <a href="#allure">Allure отчет</a>
-
 * <a href="#allure-testops">Интеграция с Allure TestOps</a>
-
 * <a href="#jira">Интеграция с Jira</a>
-
-* <a href="#telegram">Уведомление в Telegram при помощи бота</a>
-
-* <a href="#video">Примеры видео выполнения тестов на Selenoid</a>
+* <a href="#telegram">Уведомление в Telegram</a>
+* <a href="#mail">Уведомление на почту</a>
+* <a href="#video">Примеры видео выполнения тестов</a>
 
 ___
  
 <a id="tools"></a>
-## <a name="Технологии и инструменты"> Технологии и инструменты: </a>
+## <a name="Технологии и инструменты">Технологии и инструменты: </a>
 
 <p align="left">
 <a href="https://www.jetbrains.com/idea/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" height="40" weight="40" alt="IntelliJ IDEA"/>
@@ -47,13 +39,16 @@ ___
 <a href="https://qameta.io/"><img align="center" src="https://avatars.githubusercontent.com/u/19841150?s=200&v=4" height="40" weight="40" alt="TestOps"/>
 <a href="https://telegram.org/"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" height="40" weight="40" alt="Telegram"/>
 </p>
-
+  
+<a href="#content">Наверх</a>
 ____
 
 <a id="project_goal"></a>
-## <a name="Цель проекта"> Цель проекта </a>
+## <a name="Цель проекта">Цель проекта </a>
 
 > <p>Проект является демонстрационным и включает в себя ряд автоматизированных тестов пользовательского интерфейса (UI), охватывающих различные аспекты функциональности, обеспечивая качество, надежность и стабильность работы веб-приложения.</p>
+
+<a href="#content">Наверх</a>
 
  ____
 
@@ -67,6 +62,8 @@ ____
 - Проверка контента страницы Контакты;
 - Проверка содержания страницы Компания АО «НСПК»;
 - Проверка ссылок, телефонов, логотипа в "подвале" сайта на главной странице.
+  
+<a href="#content">Наверх</a>
 
 ____
 
@@ -91,6 +88,8 @@ ____
 <p align="center">  
 <a href="https://jenkins.autotests.cloud/job/005-Kornilova_Ann_qa_guru-java_14_jenkins/build?delay=0sec"><img src="src/test/resources/images/screenshot/HW14_Jenkins_parameters.png" alt="Jenkins" width="950"/></a>  
 </p>
+
+<a href="#content">Наверх</a>
 
 _____
 
@@ -119,6 +118,8 @@ clean smoke_test
 -DbrowserSize=${SCREEN_RESOLUTION}
 -Durl=${URL}
 ```
+
+<a href="#content">Наверх</a>
 
 _____
 
@@ -153,6 +154,8 @@ _____
 <img title="Allure Graphics" src="src/test/resources/images/screenshot/HW14_Allure_Report_4.png" width="850">  
 </p>
 
+<a href="#content">Наверх</a>
+
 ___
 
 <a id="allure-testops"></a>
@@ -170,6 +173,8 @@ ___
 <img title="Allure TestOps Tests" src="src/test/resources/images/screenshot/HW14_Allure_TestOps_2.png" width="850">  
 </p>
 
+<a href="#content">Наверх</a>
+
 ___
 <a id="jira"></a>
 ## <a name="Jira">Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-1369)</a>
@@ -182,6 +187,8 @@ ___
 <img title="Jira" src="src/test/resources/images/screenshot/HW14_Jira_2.png" width="850">  
 </p>
 
+<a href="#content">Наверх</a>
+
 ____
 
 <a id="telegram"></a>
@@ -191,6 +198,7 @@ ____
 <img title="Allure Overview Dashboard" src="src/test/resources/images/screenshot/HW14_Telegram.png" width="550">  
 </p>
 
+<a href="#content">Наверх</a>
 ____
 
 <a id="mail"></a>
@@ -200,10 +208,12 @@ ____
 <img title="Allure Overview Dashboard" src="src/test/resources/images/screenshot/HW14_Mail.png" width="550">  
 </p>
 
+<a href="#content">Наверх</a>
+
 ____
 
 <a id="video"></a>
-##  <a name="Telegram"> Примеры выполнения тестов </a>
+##  <a name="Video"> Примеры выполнения тестов </a>
 
 <p align="center">
 <img title="Selenoid Video" src="src/test/resources/screenshot.gif/09d9d37bed5f8ca68ac8b75ed3ee662d.gif" width="550" height="350"  alt="video">   
@@ -239,3 +249,5 @@ ____
 <img title="Selenoid Video" src="src/test/resources/screenshot.gif/e8029034c4f950f02cf427264e58254c.gif" width="550" height="350"  alt="video">   
 </p>
 </details>
+
+<a href="#content">Наверх</a>
