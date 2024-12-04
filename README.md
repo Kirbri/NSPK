@@ -256,10 +256,9 @@ ____
 <img title="Selenoid Video" src="src/test/resources/screenshot.gif/da8584b8de36369e48f6777dbe7de63c.gif" width="550" height="350"  alt="video">   
 </p>
 
-<a href="#table_of_contents">Наверх</a>
 <p align="center">
 <img title="Selenoid Video" src="src/test/resources/screenshot.gif/e8029034c4f950f02cf427264e58254c.gif" width="550" height="350"  alt="video">   
 </p>
 </details>
 
-<a href="#content">Наверх</a>
+<a href="#table_of_contents">Наверх</a>
