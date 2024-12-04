@@ -4,7 +4,7 @@
 
  ____
 
-<a id="content"></a>
+<a id="table_of_contents"></a>
 ## Содержание
 
 * <a href="#tools">Технологии и инструменты</a>
@@ -16,31 +16,39 @@
 * <a href="#allure">Allure отчет</a>
 * <a href="#allure-testops">Интеграция с Allure TestOps</a>
 * <a href="#jira">Интеграция с Jira</a>
-* <a href="#telegram">Уведомление в Telegram</a>
-* <a href="#mail">Уведомление на почту</a>
+* <a href="#notifications">Уведомления</a>
 * <a href="#video">Примеры видео выполнения тестов</a>
 
 ___
  
 <a id="tools"></a>
-## <a name="Технологии и инструменты">Технологии и инструменты: </a>
+## <a name="Технологии и инструменты">Технологии и инструменты на проекте</a>
 
-<p align="left">
-<a href="https://www.jetbrains.com/idea/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" height="40" weight="40" alt="IntelliJ IDEA"/>
-<a href="https://www.java.com/ru/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" height="40" weight="40" alt="Java"/>
-<a href="https://github.com/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" height="40" weight="40" alt="Github"/>
-<a href="https://junit.org/junit5/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original.svg" height="40" weight="40" alt="JUnit 5"/>
-<a href="https://gradle.org/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gradle/gradle-original.svg" height="40" weight="40" alt="Gradle"/>
-<a href="https://www.jenkins.io/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" height="40" weight="40" alt="Jenkins"/>
-<a href="https://www.atlassian.com/software/jira"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" height="40" weight="40" alt="Jira"/>
-<a href="https://github.com/allure-framework"><img align="center" src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4" height="40" weight="40" alt="Allure"/>
-<a href="https://selenide.org/"><img align="center" src="https://avatars.githubusercontent.com/u/43955696?s=200&v=4" height="40" weight="40" alt="Selenide"/>
-<a href="https://aerokube.com/selenoid/"><img align="center" src="https://avatars.githubusercontent.com/u/26328913?s=200&v=4" height="40" weight="40" alt="Selenoid"/>
-<a href="https://qameta.io/"><img align="center" src="https://avatars.githubusercontent.com/u/19841150?s=200&v=4" height="40" weight="40" alt="TestOps"/>
-<a href="https://telegram.org/"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" height="40" weight="40" alt="Telegram"/>
-</p>
+- Проект написан на **Java** с использованием фреймфворка **Selenide**
+- Для модульного тестирования использовался **JUnit 5**
+- Отчётность представлена в **Allure Report**
+- Непрерывная интеграция и непрерывное развертывание реализовано через **Jenkins**
+- На базе **Selenoid** проводились UI запуски тестов   
+- **Telegram** и почтовый агент используются для получения <a href="#notifications">уведомлений</a>
   
-<a href="#content">Наверх</a>
+  
+  
+| Логотип | Описание |
+| --- | --- |
+| <a href="https://www.jetbrains.com/idea/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" height="40" weight="40" alt="IntelliJ IDEA"/> | IntelliJ IDEA — интегрированная среда разработки программного обеспечения. |
+| <a href="https://www.java.com/ru/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" height="40" weight="40" alt="Java"/> | Java — строго типизированный объектно-ориентированный язык программирования общего назначения. |
+| <a href="https://github.com/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" height="40" weight="40" alt="Github"/> | GitHub — крупнейший веб-сервис для хостинга IT-проектов и их совместной разработки. |
+| <a href="https://junit.org/junit5/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original.svg" height="40" weight="40" alt="JUnit 5"/> | JUnit — фреймворк для модульного тестирования программного обеспечения на языке Java. |
+| <a href="https://gradle.org/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gradle/gradle-original.svg" height="40" weight="40" alt="Gradle"/> | Gradle — система автоматической сборки. |
+| <a href="https://www.jenkins.io/"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" height="40" weight="40" alt="Jenkins"/> | Jenkins — программная система предназначенная для обеспечения процесса непрерывной интеграции программного обеспечения. |
+| <a href="https://www.atlassian.com/software/jira"><img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" height="40" weight="40" alt="Jira"/> | Jira — система отслеживания ошибок, предназначена для организации взаимодействия с пользователями и управления проектами. |
+| <a href="https://github.com/allure-framework"><img align="center" src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4" height="40" weight="40" alt="Allure"/> | Allure - фреймворк для создания простых и понятных отчётов автотестов. |
+| <a href="https://selenide.org/"><img align="center" src="https://avatars.githubusercontent.com/u/43955696?s=200&v=4" height="40" weight="40" alt="Selenide"/> | Selenide - это фреймворк для автоматизированного тестирования веб-приложений на основе Selenium WebDriver. |
+| <a href="https://aerokube.com/selenoid/"><img align="center" src="https://avatars.githubusercontent.com/u/26328913?s=200&v=4" height="40" weight="40" alt="Selenoid"/> | Selenoid — это сервер, который позволяет запускать браузеры в docker контейнерах. |
+| <a href="https://qameta.io/"><img align="center" src="https://avatars.githubusercontent.com/u/19841150?s=200&v=4" height="40" weight="40" alt="TestOps"/> | Allure Testops - полноценное управление тестированием, ориентированное на автоматизацию, согласованное с DevOps. |
+| <a href="https://telegram.org/"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" height="40" weight="40" alt="Telegram"/>| Telegram — кроссплатформенный мессенджер. |
+
+<a href="#table_of_contents">Наверх</a>
 ____
 
 <a id="project_goal"></a>
@@ -48,7 +56,7 @@ ____
 
 > <p>Проект является демонстрационным и включает в себя ряд автоматизированных тестов пользовательского интерфейса (UI), охватывающих различные аспекты функциональности, обеспечивая качество, надежность и стабильность работы веб-приложения.</p>
 
-<a href="#content">Наверх</a>
+<a href="#table_of_contents">Наверх</a>
 
  ____
 
@@ -63,7 +71,7 @@ ____
 - Проверка содержания страницы Компания АО «НСПК»;
 - Проверка ссылок, телефонов, логотипа в "подвале" сайта на главной странице.
   
-<a href="#content">Наверх</a>
+<a href="#table_of_contents">Наверх</a>
 
 ____
 
@@ -89,7 +97,7 @@ ____
 <a href="https://jenkins.autotests.cloud/job/005-Kornilova_Ann_qa_guru-java_14_jenkins/build?delay=0sec"><img src="src/test/resources/images/screenshot/HW14_Jenkins_parameters.png" alt="Jenkins" width="950"/></a>  
 </p>
 
-<a href="#content">Наверх</a>
+<a href="#table_of_contents">Наверх</a>
 
 _____
 
@@ -119,12 +127,12 @@ clean smoke_test
 -Durl=${URL}
 ```
 
-<a href="#content">Наверх</a>
+<a href="#table_of_contents">Наверх</a>
 
 _____
 
 <a id="allure"></a>
-## <a name="Allure">Allure [отчет](https://jenkins.autotests.cloud/job/005-Kornilova_Ann_qa_guru-java_14_jenkins/27/allure/)</a>
+## <a name="Allure">Allure [отчет](https://jenkins.autotests.cloud/job/005-Kornilova_Ann_qa_guru-java_14_jenkins/allure/)</a>
 
 ### Основная страница отчёта
 
@@ -154,7 +162,7 @@ _____
 <img title="Allure Graphics" src="src/test/resources/images/screenshot/HW14_Allure_Report_4.png" width="850">  
 </p>
 
-<a href="#content">Наверх</a>
+<a href="#table_of_contents">Наверх</a>
 
 ___
 
@@ -173,7 +181,7 @@ ___
 <img title="Allure TestOps Tests" src="src/test/resources/images/screenshot/HW14_Allure_TestOps_2.png" width="850">  
 </p>
 
-<a href="#content">Наверх</a>
+<a href="#table_of_contents">Наверх</a>
 
 ___
 <a id="jira"></a>
@@ -187,29 +195,32 @@ ___
 <img title="Jira" src="src/test/resources/images/screenshot/HW14_Jira_2.png" width="850">  
 </p>
 
-<a href="#content">Наверх</a>
+<a href="#table_of_contents">Наверх</a>
 
 ____
 
-<a id="telegram"></a>
-##  <a name="Telegram"> Уведомление в Telegram </a>
-
+<a id="notifications"></a>
+## <a name="Notifications"> Уведомления </a>
+  
+  
+###  <a name="Telegram"> Уведомление в Telegram </a>
+  
 <p align="center">  
 <img title="Allure Overview Dashboard" src="src/test/resources/images/screenshot/HW14_Telegram.png" width="550">  
 </p>
-
-<a href="#content">Наверх</a>
-____
-
-<a id="mail"></a>
-##  <a name="Mail"> Уведомление на почту </a>
-
+  
+<a href="#table_of_contents">Наверх</a>
+  
+  
+###  <a name="Mail"> Уведомление на почту </a>
+  
 <p align="center">  
 <img title="Allure Overview Dashboard" src="src/test/resources/images/screenshot/HW14_Mail.png" width="550">  
 </p>
+  
+<a href="#table_of_contents">Наверх</a>
 
-<a href="#content">Наверх</a>
-
+  
 ____
 
 <a id="video"></a>
@@ -245,6 +256,7 @@ ____
 <img title="Selenoid Video" src="src/test/resources/screenshot.gif/da8584b8de36369e48f6777dbe7de63c.gif" width="550" height="350"  alt="video">   
 </p>
 
+<a href="#table_of_contents">Наверх</a>
 <p align="center">
 <img title="Selenoid Video" src="src/test/resources/screenshot.gif/e8029034c4f950f02cf427264e58254c.gif" width="550" height="350"  alt="video">   
 </p>
