@@ -9,12 +9,12 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class BanksPage {
-    private final SelenideElement banksMenuPage = $("[data-menu-name=\"banks\"]"),
-            guidesBanksMenuPage = $("[href=\"/banks/guides\"]"),
-            acquiringBanksMenuPage = $("[href=\"/banks/acquiring\"]"),
-            rulesBanksMenuPage = $("[href=\"/banks/rules\"]"),
-            analyticsBanksMenuPage = $("[href=\"/banks/analytics\"]"),
-            echeckBanksMenuPage = $("[href=\"/echeck\"]"),
+    private final SelenideElement banksMenuPage = $("[data-menu-name='banks']"),
+            guidesBanksMenuPage = $("[href='/banks/guides']"),
+            acquiringBanksMenuPage = $("[href='/banks/acquiring']"),
+            rulesBanksMenuPage = $("[href='/banks/rules']"),
+            analyticsBanksMenuPage = $("[href='/banks/analytics']"),
+            echeckBanksMenuPage = $("[href='/echeck']"),
             scrollTab = $(".scroll-smooth"),
             guidesHeadFontTitleText = $(".ctr-head__font.ctr-head__font--title"),
             acquiringHeadFontText = $(".ctr-head__font.ctr-head__font--text"),
@@ -23,11 +23,10 @@ public class BanksPage {
             echeckHeadFontTitle = $(".ctr-check-head__font.ctr-check-head__font--title"),
             echeckHeadFontText = $(".ctr-check-head__font.ctr-check-head__font--text");
 
-    private final ElementsCollection guidesSidebarFontTitleYears = $$(".ctr-sidebar__font.ctr-sidebar__font" +
-            "--title"),
+    private final ElementsCollection guidesSidebarFontTitleYears = $$(".ctr-sidebar__font.ctr-sidebar__font--title"),
             rulesLinkFontText = $$(".ui-file-link__font.ui-file-link__font--text");
 
-    public BanksPage complianceOpenedBanksPageGuides() {
+    public BanksPage checkComplianceOpenedBanksPageGuides() {
         banksMenuPage.hover();
         guidesBanksMenuPage.click();
         guidesHeadFontTitleText.should(text("Руководства"));
@@ -35,17 +34,16 @@ public class BanksPage {
         return this;
     }
 
-    public BanksPage complianceOpenedBanksPageAcquiring() {
+    public BanksPage checkComplianceOpenedBanksPageAcquiring() {
         scrollTab.scrollTo();
         banksMenuPage.hover();
         acquiringBanksMenuPage.click();
         guidesHeadFontTitleText.should(text("Эквайринг SoftPOS"));
-        acquiringHeadFontText.should(text("Прием оплаты за товары и услуги в торговых предприятиях с помощью " +
-                "смартфона без использования специального дополнительного оборудования."));
+        acquiringHeadFontText.should(text("Прием оплаты за товары и услуги в торговых предприятиях с помощью смартфона без использования специального дополнительного оборудования."));
         return this;
     }
 
-    public BanksPage complianceOpenedBanksPageRules() {
+    public BanksPage checkComplianceOpenedBanksPageRules() {
         scrollTab.scrollTo();
         banksMenuPage.hover();
         rulesBanksMenuPage.click();
@@ -61,24 +59,21 @@ public class BanksPage {
         return this;
     }
 
-    public BanksPage complianceOpenedBanksPageAnalytics() {
+    public BanksPage checkComplianceOpenedBanksPageAnalytics() {
         scrollTab.scrollTo();
         banksMenuPage.hover();
         analyticsBanksMenuPage.click();
         analyticsHeadFontTitle.should(text("Сервис «Аналитика»"));
-        analyticsHeadFontText.scrollTo().should(text("Предоставляет российским участникам ПС «Мир» готовые " +
-                "аналитические бизнес-отчеты, которые позволяют оценить собственные показатели банка в различных " +
-                "разрезах и сравнить их с рынком."));
+        analyticsHeadFontText.scrollTo().should(text("Предоставляет российским участникам ПС «Мир» готовые аналитические бизнес-отчеты, которые позволяют оценить собственные показатели банка в различных разрезах и сравнить их с рынком."));
         return this;
     }
 
-    public BanksPage complianceOpenedBanksPageEcheck() {
+    public BanksPage checkComplianceOpenedBanksPageEcheck() {
         scrollTab.scrollTo();
         banksMenuPage.hover();
         echeckBanksMenuPage.click();
         echeckHeadFontTitle.should(text("Сервис привязки фискальных чеков к банковским транзакциям"));
-        echeckHeadFontText.scrollTo().should(text("Это удобный и быстрый инструмент получения в электронном виде " +
-                "кассового чека клиента по покупкам"));
+        echeckHeadFontText.scrollTo().should(text("Это удобный и быстрый инструмент получения в электронном виде кассового чека клиента по покупкам"));
         return this;
     }
 }

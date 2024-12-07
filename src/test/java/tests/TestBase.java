@@ -9,16 +9,17 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.MainPage;
 
 import java.util.Map;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.browser;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class TestBase {
+    final MainPage mainPage = new MainPage();
+
     @BeforeAll
     static void beforeAll() {
 
@@ -27,8 +28,8 @@ public class TestBase {
         browser = System.getProperty("browser", "chrome");
         Configuration.baseUrl = "https://nspk.ru";
         Configuration.timeout = 10000;
-
-        Configuration.remote = "https://user1:1234@" + System.getProperty("url", "selenoid.autotests.cloud") + "/wd/hub";
+        Configuration.remote = "https://" + System.getProperty("login", "user1:1234") + "@"
+                + System.getProperty("url", "selenoid.autotests.cloud") + "/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
@@ -43,27 +44,22 @@ public class TestBase {
     void beforeEach() {
         step("Открытие главной страницы «Национальная система платежных карт»", () -> {
             open("/");
-            $(".ctr-index-head__font.ctr-index-head__font--title").shouldHave(text("Национальная " +
-                    "система платежных карт"));
+            mainPage.checkComplianceIndexHeadTitle();
         });
 
         step("Закрытие «cookie»", () -> {
-            $(".modals-cookies__button.modals-cookies__button--close.link").click();
+            mainPage.closeCookies();
         });
     }
 
     @AfterEach
-    void afterEach() {
-        Selenide.closeWebDriver();
-    }
-
-    @AfterEach
-    void addAttachments() {
+    void addAttachmentsAndCloseWebDriver() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         if (browser.equals("chrome")) {
             Attach.browserConsoleLogs();
         }
         Attach.addVideo();
+        Selenide.closeWebDriver();
     }
 }
