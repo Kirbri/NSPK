@@ -28,7 +28,7 @@ public class TestBase {
         browser = System.getProperty("browser", "chrome");
         Configuration.baseUrl = "https://nspk.ru";
         Configuration.timeout = 10000;
-        Configuration.remote = "https://" + System.getProperty("login", "user1:1234") + "@"
+        Configuration.remote = "https://" + System.getProperty("login") + "@"
                 + System.getProperty("url", "selenoid.autotests.cloud") + "/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
