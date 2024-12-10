@@ -39,7 +39,9 @@ public class BanksPage {
         banksMenuPage.hover();
         acquiringBanksMenuPage.click();
         guidesHeadFontTitleText.should(text("Эквайринг SoftPOS"));
-        acquiringHeadFontText.should(text("Прием оплаты за товары и услуги в торговых предприятиях с помощью смартфона без использования специального дополнительного оборудования."));
+        acquiringHeadFontText.should(text("""
+        Прием оплаты за товары и услуги в торговых предприятиях с помощью смартфона без использования специального
+         дополнительного оборудования."""));
         return this;
     }
 
@@ -64,7 +66,9 @@ public class BanksPage {
         banksMenuPage.hover();
         analyticsBanksMenuPage.click();
         analyticsHeadFontTitle.should(text("Сервис «Аналитика»"));
-        analyticsHeadFontText.scrollTo().should(text("Предоставляет российским участникам ПС «Мир» готовые аналитические бизнес-отчеты, которые позволяют оценить собственные показатели банка в различных разрезах и сравнить их с рынком."));
+        analyticsHeadFontText.scrollTo().should(text("""
+        Предоставляет российским участникам ПС «Мир» готовые аналитические бизнес-отчеты, которые позволяют оценить
+         собственные показатели банка в различных разрезах и сравнить их с рынком."""));
         return this;
     }
 
@@ -73,7 +77,8 @@ public class BanksPage {
         banksMenuPage.hover();
         echeckBanksMenuPage.click();
         echeckHeadFontTitle.should(text("Сервис привязки фискальных чеков к банковским транзакциям"));
-        echeckHeadFontText.scrollTo().should(text("Это удобный и быстрый инструмент получения в электронном виде кассового чека клиента по покупкам"));
+        echeckHeadFontText.scrollTo().should(text("""
+        Это удобный и быстрый инструмент получения в электронном виде кассового чека клиента по покупкам"""));
         return this;
     }
 }

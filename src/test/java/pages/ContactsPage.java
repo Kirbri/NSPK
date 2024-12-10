@@ -43,12 +43,15 @@ public class ContactsPage {
     }
 
     public ContactsPage checkComplianceContentFontInfoTexts() {
-        contentFontInfo.shouldHave(texts("115184, Москва, ул. Большая Татарская, д. 11", "+7 495 705-99-99", "+7 495 705-99-77", "8 800 100 54 64\n(бесплатная линия для звонков по России)", "info@nspk.ru"));
+        contentFontInfo.shouldHave(texts("115184, Москва, ул. Большая Татарская, д. 11",
+                "+7 495 705-99-99", "+7 495 705-99-77",
+                "8 800 100 54 64\n(бесплатная линия для звонков по России)", "info@nspk.ru"));
         return this;
     }
 
     public ContactsPage checkComplianceContactsFontHrefAddress() {
-        contactsFontHref.get(0).shouldHave(href("https://yandex.ru/maps/213/moscow/house/bolshaya_tatarskaya_ulitsa_11/Z04YcARjQUEGQFtvfXt1cH1iYQ==/?ll=37.633841%2C55.741115&z=17.14"));
+        contactsFontHref.get(0).shouldHave(href("""
+        https://yandex.ru/maps/213/moscow/house/bolshaya_tatarskaya_ulitsa_11/Z04YcARjQUEGQFtvfXt1cH1iYQ==/?ll=37.633841%2C55.741115&z=17.14"""));
         return this;
     }
 

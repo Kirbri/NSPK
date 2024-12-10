@@ -17,7 +17,8 @@ public class PaymentSystemMirPage {
             pdfRulesPSMir = $("[href='/file/fff98849/tarify-rus-4-12.pdf']");
     private final int numberOfPagesPdfRulesPSMir = 40;
     private final String authorPdfRulesPSMir = "Ожерельева Ольга Викторовна";
-    private final String titlePdfRulesPSMir = "Правила платежной системы «Мир». Приложение 4. Тарифы. Часть 1. Для Российских участников_v.4.12";
+    private final String titlePdfRulesPSMir = """
+    Правила платежной системы «Мир». Приложение 4. Тарифы. Часть 1. Для Российских участников_v.4.12""";
 
     public PaymentSystemMirPage openPaymentSystemMirPage() {
         hrefTermsAndTariffs.scrollTo().click();

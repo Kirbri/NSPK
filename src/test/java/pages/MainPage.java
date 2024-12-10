@@ -75,7 +75,8 @@ public class MainPage {
     }
 
     public MainPage checkComplianceFooterPhoneNumberSupportMirSbpText() {
-        phoneNumberSupportMirSbpText.scrollTo().should(text("Поддержка держателей карт «Мир» и клиентов Системы быстрых платежей"));
+        phoneNumberSupportMirSbpText.scrollTo().should(text("""
+        Поддержка держателей карт «Мир» и клиентов Системы быстрых платежей"""));
         return this;
     }
 
